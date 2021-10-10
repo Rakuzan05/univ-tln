@@ -19,18 +19,19 @@ BOOL    -> VRAI | FAUX
 l = []
 i = 0
 postfixed_l = []
-def parser(unilex) :
-    global i
-    global l
+def parser(unilex) :  #Analyse d'une liste d'unités lexicales, reconnaissance d'une expression de taille conforme + retour en notation postfixe
+    global i, l
     l = unilex
     if expr() and i == len(l):
         print("Chaine valide")
         return postfixed_l
     else:
         if i >= len(l):
-            print(f"Chaine invalide near character {l[-1][1]} index out")
+            print(f"Chaine invalide à cause du caractère {l[-1][1]} dépassement d'indice")
         else:
-            print(f"Chaine invalide near character {l[i][1]}")
+            print(f"Chaine invalide à cause du caractère {l[i][1]}")
+
+#Application de la grammaire pour reconnaître chaque cas
 
 def expr():
     global i
@@ -102,9 +103,9 @@ def fact():
             return False
     else:
         if i >= len(l):
-            print(f"Chaine invalide near character {l[-1][1]} index out")
+            print(f"Chaine invalide à cause du caractère {l[-1][1]} dépassement d'indice")
         else:
-            print(f"Chaine invalide near character {l[i][1]}")
+            print(f"Chaine invalide à cause du caractère {l[i][1]}")
         return False
 
     return True
