@@ -11,4 +11,4 @@ def codegen(postfixed_l):
             stack_level -= 1
     f.write("print(t0)")
     f.close()
-    print("Compilated successfully")
+    print("Compilation réussie avec succès")
