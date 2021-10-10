@@ -2,19 +2,21 @@ i = 0
 postfixed_l = []
 l = []
 def parser(unilex) :
-    global i
-    global l
+    global i, l
     l = unilex
-    if expr() and i == len(l):
+    if expr() and i == len(l):  #Analyse d'une liste d'unités lexicales, reconnaissance d'une expression de taille conforme + retour en notation postfixe
         print("Chaine valide")
         return postfixed_l
     else:
         if i >= len(l):
-            print(f"Chaine invalide near character {l[-1][1]} index out")
+            print(f"Chaine invalide à cause du caractère {l[-1][1]} dépassement d'indice")
         else:
-            print(f"Chaine invalide near character {l[i][1]}")
+            print(f"Chaine invalide à cause du caractère {l[i][1]}")
+            
+            
+#Application de la grammaire pour reconnaître chaque cas
 
-def expr():
+def expr(): 
     global i
     if terme() and reste_e():
         return True
@@ -71,10 +73,10 @@ def fact():
         if expr() :
             if i < len(l) and l[i][1] == ')':
                 i += 1
-                return True;
+                return True
     else:
         if i >= len(l):
-            print(f"Chaine invalide near character {l[-1][1]} index out")
+            print(f"Chaine invalide à cause du caractère {l[-1][1]} dépassement d'indice")
         else:
-            print(f"Chaine invalide near character {l[i][1]}")
+            print(f"Chaine invalide à cause du caractère {l[i][1]}")
         return False
