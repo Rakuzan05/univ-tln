@@ -1,7 +1,7 @@
 """
-Convertit la chaine de caracteres <s> en une liste d'unités
-léxicales de la forme (<type>, <valeur>). Retourne None en cas
-d'erreur et affiche le caractere fautif
+Convertit la chaine de caractères <s> en une liste d'unités
+lexicales de la forme (<type>, <valeur>). Retourne None en cas
+d'erreur et affiche le caractere fautif.
 """
 def scanner(s):
     list_ul = []
@@ -39,7 +39,7 @@ def scanner(s):
             i += 1
 
         else:
-            print(f"Lexical error near char {s[i]}")
+            print(f"Erreur lexicale due au caractère {s[i]}")
             return None
 
     return list_ul
